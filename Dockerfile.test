@@ -1,0 +1,4 @@
+FROM docker-registry.k8s.array21.dev/openssl-musl:latest AS OPENSSL
+
+FROM ubuntu:latest
+COPY --from=OPENSSL /musl /musl
